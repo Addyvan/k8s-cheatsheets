@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: YOUR-LABEL-HERE
+  name: YOUR-NAME-HERE
+  namespace: YOUR-NAMESPACE-HERE
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: YOUR-NAME-HERE
+  template:
+    metadata:
+      labels:
+        app: YOUR-NAME-HERE
+    spec:
+      containers:
+      - image: YOUR-IMAGE-HERE
+        name: YOUR-NAME-HERE
+        ports:
+          - containerPort: 3000
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "0.05"
